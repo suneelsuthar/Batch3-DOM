@@ -1,0 +1,68 @@
+._remove{
+    display: none;
+}
+
+._show{
+    display: block;
+}
+
+._test{
+    background-color: red !important;
+}
+
+.card{
+    margin: 20px;
+    background-color: dodgerblue !important;
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.delete-btn{
+    background-color: red !important;
+    color: white !important;
+    border-radius: 5px;
+    outline: none;
+    border: 0px;
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    
+}
+
+.edit-btn{  
+    background-color: green !important;
+   color: white !important;
+   border-radius: 5px;
+    border: 0px;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+}
+
+.card-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.user-img{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 40px;
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(44, 179, 44);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+}
