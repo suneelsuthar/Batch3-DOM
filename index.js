@@ -1152,113 +1152,113 @@ var identiCards = [
 
 // console.log(identiCards);
 
-var container = document.getElementById("container");
+// var container = document.getElementById("container");
 
-function renderCards() {
-  container.innerHTML = "";
-  for (var i = 0; i < identiCards.length; i++) {
-    var card = document.createElement("div");
-    card.setAttribute("class", "card");
+// function renderCards() {
+//   container.innerHTML = "";
+//   for (var i = 0; i < identiCards.length; i++) {
+//     var card = document.createElement("div");
+//     card.setAttribute("class", "card");
 
-    var cardheading = document.createElement("h5");
-    cardheading.setAttribute("class", "card-heading");
-    cardheading.innerText = identiCards[i].title;
+//     var cardheading = document.createElement("h5");
+//     cardheading.setAttribute("class", "card-heading");
+//     cardheading.innerText = identiCards[i].title;
 
-    var userImg = document.createElement("div");
-    userImg.setAttribute("class", "user-img");
-    userImg.innerHTML = identiCards[i].name.charAt(0).toUpperCase();
-    card.appendChild(userImg);
+//     var userImg = document.createElement("div");
+//     userImg.setAttribute("class", "user-img");
+//     userImg.innerHTML = identiCards[i].name.charAt(0).toUpperCase();
+//     card.appendChild(userImg);
 
-    var cardbody = document.createElement("div");
-    cardbody.setAttribute("class", "card-body");
+//     var cardbody = document.createElement("div");
+//     cardbody.setAttribute("class", "card-body");
 
-    var username = document.createElement("p");
-    username.setAttribute("class", "username");
-    username.innerText = identiCards[i].name;
+//     var username = document.createElement("p");
+//     username.setAttribute("class", "username");
+//     username.innerText = identiCards[i].name;
 
-    var rollNumber = document.createElement("p");
-    rollNumber.setAttribute("class", "rollNumber");
-    rollNumber.innerHTML = "Roll Number : " + identiCards[i].rollNumber;
+//     var rollNumber = document.createElement("p");
+//     rollNumber.setAttribute("class", "rollNumber");
+//     rollNumber.innerHTML = "Roll Number : " + identiCards[i].rollNumber;
 
-    var course = document.createElement("p");
-    course.setAttribute("class", "course");
-    course.innerHTML = "Course : " + identiCards[i].course;
+//     var course = document.createElement("p");
+//     course.setAttribute("class", "course");
+//     course.innerHTML = "Course : " + identiCards[i].course;
 
-    var footer = document.createElement("div");
-    footer.setAttribute("class", "card-footer");
+//     var footer = document.createElement("div");
+//     footer.setAttribute("class", "card-footer");
 
-    var deletebtn = document.createElement("button");
-    deletebtn.setAttribute("class", "delete-btn");
-    deletebtn.innerText = "Delete";
-    deletebtn.setAttribute("id", i);
-    deletebtn.addEventListener("click", function () {
-      var id = this.id;
-      identiCards.splice(id, 1);
-      renderCards();
-    });
+//     var deletebtn = document.createElement("button");
+//     deletebtn.setAttribute("class", "delete-btn");
+//     deletebtn.innerText = "Delete";
+//     deletebtn.setAttribute("id", i);
+//     deletebtn.addEventListener("click", function () {
+//       var id = this.id;
+//       identiCards.splice(id, 1);
+//       renderCards();
+//     });
 
-    var editbtn = document.createElement("button");
-    editbtn.setAttribute("class", "edit-btn");
-    editbtn.innerText = "Edit";
-    editbtn.setAttribute("id", i);
-    editbtn.addEventListener("click", function () {
-      var id = this.id;
+//     var editbtn = document.createElement("button");
+//     editbtn.setAttribute("class", "edit-btn");
+//     editbtn.innerText = "Edit";
+//     editbtn.setAttribute("id", i);
+//     editbtn.addEventListener("click", function () {
+//       var id = this.id;
 
-      var title = prompt("Enter new title", identiCards[id].title);
-      var name = prompt("Enter new name", identiCards[id].name);
-      var rollNumber = prompt(
-        "Enter new roll number",
-        identiCards[id].rollNumber
-      );
-      var course = prompt("Enter new course", identiCards[id].course);
+//       var title = prompt("Enter new title", identiCards[id].title);
+//       var name = prompt("Enter new name", identiCards[id].name);
+//       var rollNumber = prompt(
+//         "Enter new roll number",
+//         identiCards[id].rollNumber
+//       );
+//       var course = prompt("Enter new course", identiCards[id].course);
 
-      identiCards[id].title = title;
-      identiCards[id].name = name;
-      identiCards[id].rollNumber = rollNumber;
-      identiCards[id].course = course;
+//       identiCards[id].title = title;
+//       identiCards[id].name = name;
+//       identiCards[id].rollNumber = rollNumber;
+//       identiCards[id].course = course;
 
-      renderCards();
-    });
+//       renderCards();
+//     });
 
-    footer.appendChild(deletebtn);
-    footer.appendChild(editbtn);
+//     footer.appendChild(deletebtn);
+//     footer.appendChild(editbtn);
 
-    cardbody.appendChild(username);
-    cardbody.appendChild(rollNumber);
-    cardbody.appendChild(course);
+//     cardbody.appendChild(username);
+//     cardbody.appendChild(rollNumber);
+//     cardbody.appendChild(course);
 
-    card.appendChild(cardheading);
-    card.appendChild(cardbody);
-    card.appendChild(footer);
+//     card.appendChild(cardheading);
+//     card.appendChild(cardbody);
+//     card.appendChild(footer);
 
-    container.appendChild(card);
-  }
-}
+//     container.appendChild(card);
+//   }
+// }
 
-renderCards();
-function addCard() {
-  var title = document.getElementById("title").value;
-  var name = document.getElementById("name").value;
-  var rollnumber = document.getElementById("rollnumber").value;
-  var course = document.getElementById("course").value;
-  if (title !== "" && name !== "" && rollnumber !== "" && course !== "") {
-    var card = {
-      title: title,
-      name: name,
-      rollNumber: rollnumber,
-      course: course,
-    };
+// renderCards();
+// function addCard() {
+//   var title = document.getElementById("title").value;
+//   var name = document.getElementById("name").value;
+//   var rollnumber = document.getElementById("rollnumber").value;
+//   var course = document.getElementById("course").value;
+//   if (title !== "" && name !== "" && rollnumber !== "" && course !== "") {
+//     var card = {
+//       title: title,
+//       name: name,
+//       rollNumber: rollnumber,
+//       course: course,
+//     };
 
-    identiCards.unshift(card);
-    document.getElementById("title").value = "";
-    document.getElementById("name").value = "";
-    document.getElementById("rollnumber").value = "";
-    document.getElementById("course").value = "";
-    renderCards();
-    console.log(identiCards);
-  } else {
-  }
-}
+//     identiCards.unshift(card);
+//     document.getElementById("title").value = "";
+//     document.getElementById("name").value = "";
+//     document.getElementById("rollnumber").value = "";
+//     document.getElementById("course").value = "";
+//     renderCards();
+//     console.log(identiCards);
+//   } else {
+//   }
+// }
 
 // var arr = [];
 
@@ -1317,3 +1317,216 @@ var student4 = {
 // console.log(student2.className);
 // console.log(student3.className);
 // console.log(student4.className);
+
+// var path =  window.location.href
+// console.log(path)
+
+// var hostname = window.location.hostname
+// console.log(hostname)
+
+// var hash = window.location.hash;
+// console.log(hash);
+
+// function getHashName() {
+// window.location.href ="https://www.fiverr.com/users/suneelkumar518/seller_dashboard"
+// var hash = window.location.hash;
+// console.log(hash);
+
+// window.location.href = "home.html"
+// window.location.assign(
+//   "https://www.fiverr.com/users/suneelkumar518/seller_dashboard"
+// );
+
+// window.location.reload()
+// window.history.back();
+
+// window.open("https://www.fiverr.com/users/suneelkumar518/seller_dashboard");
+// window.close();
+
+// window.open("home.html", "win1", "width=420,height=380");
+// var windowSpecs = "faq.html,faq,width=420,height=380,left=200,top=100";
+// var faqPage = window.open(windowSpecs);
+//   var testPop = window.open("", "", "width=100,height=100");
+//   console.log(testPop);
+//   if (testPop === null) {
+//     alert("Please disable your popup blocker.");
+//   }
+// }
+
+//window.location.href = "https://www.fiverr.com/users/suneelkumar518/seller_dashboard"
+// window.location.hash = "#suneel"
+// window.location.assign()
+// window.location.hostname
+// window.location.reload()
+// window.history.back()
+// window.history.forward()
+// window.history.go()
+// window.open()
+
+// function getRadioValue() {
+//   var gender = document.getElementsByName("gender");
+//   console.log(gender);
+
+//   for (var i = 0; i < gender.length; i++) {
+//     if (gender[i].checked) {
+//       console.log(gender[i].value);
+//     }
+//   }
+// }
+
+// function getCityValue() {
+//   var city = document.getElementById("cities");
+//   if (city.value === "select") {
+//     alert("Please select a city");
+//   } else {
+//     console.log(city.value);
+//   }
+// }
+
+// function getSubjectValue() {
+//   var subjects = document.getElementsByName("subjects");
+//   for (var i = 0; i < subjects.length; i++) {
+//     if (subjects[i].checked) {
+//       console.log("==========>", subjects[i].value);
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// var data = [];
+// function saveData() {
+//   var title = document.getElementById("title").value;
+//   var description = document.getElementById("description").value;
+
+//   data.push({
+//     title: title,
+//     description: description,
+//   });
+
+//   localStorage.setItem("localData", JSON.stringify(data));
+
+//   // console.log(data);
+
+//   // localStorage.setItem("title", title);
+//   // localStorage.setItem("description", description);
+
+//   // console.log(title,description)
+// }
+
+// // var localtitle = localStorage.getItem("title");
+// // var localdescription = localStorage.getItem("description");
+// // document.getElementById("title").value = localtitle;
+// // document.getElementById("description").value = localdescription;
+
+// var getdata = localStorage.getItem("localData");
+// console.log(getdata);
+// if (getdata) {
+//   getdata = JSON.parse(getdata);
+// } else {
+//   getdata = [];
+// }
+// console.log(getdata);
+
+// var list = document.getElementById("list");
+
+// for (var i = 0; i < getdata.length; i++) {
+//   var item = document.createElement("li");
+//   item.innerText = getdata[i].title;
+//   list.appendChild(item);
+// }
+// var name = "test";
+
+// var stringdata = JSON.stringify(arr);
+
+// localStorage.setItem("name", JSON.stringify(arr));
+
+// var getdata = localStorage.getItem("name");
+
+// if (getdata) {
+//   getdata = JSON.parse(getdata);
+// }
+
+var container = document.getElementById("container");
+var data1 = localStorage.getItem("items");
+if (data1 !== null) {
+  data1 = JSON.parse(data1);
+} else {
+  data1 = [];
+}
+function getData() {
+  container
+  // <li class="list-group-item">An item</li>
+  for (var i = 0; i < data1.length; i++) {
+    var listitem = document.createElement("li");
+    listitem.setAttribute("class", "list-group-item");
+
+    var h6 = document.createElement("h6");
+    h6.setAttribute("class", "title");
+    h6.innerText = data1[i].title;
+
+    var desc = document.createElement("p");
+    desc.setAttribute("class", "description");
+    desc.innerText = data1[i].description;
+    var cardfooter = document.createElement("div");
+    cardfooter.setAttribute("class", "card-footer");
+    var editBtn = document.createElement("button");
+    editBtn.setAttribute("class", "btn btn-primary");
+    editBtn.setAttribute("type", "button");
+    editBtn.setAttribute("id", i);
+    editBtn.innerText = "Edit";
+    editBtn.addEventListener("click", function () {
+      window.location.href = `edit.html?id=${this.id}`;
+    });
+    var dltBtn = document.createElement("button");
+    dltBtn.setAttribute("class", "btn btn-danger");
+    dltBtn.setAttribute("type", "button");
+    dltBtn.innerText = "Delete";
+    dltBtn.setAttribute("id", i);
+    dltBtn.addEventListener("click", async function () {
+      data1.splice(this.id, 1);
+      localStorage.setItem("items", JSON.stringify(data1));
+      getData();
+    });
+
+    listitem.appendChild(h6);
+    listitem.appendChild(desc);
+
+    cardfooter.appendChild(editBtn);
+    cardfooter.appendChild(dltBtn);
+    listitem.appendChild(cardfooter);
+
+    container.appendChild(listitem);
+  }
+}
+
+getData();
+var data = data1;
+
+function saveList() {
+
+  var title = document.getElementById("title").value;
+  var description = document.getElementById("description").value;
+  var err = document.getElementById("err");
+  if (title === "") {
+    err.innerText = "Title is required";
+  } else if (description === "") {
+    err.innerText = "Description is required";
+  } else {
+    var obj = {
+      title: title,
+      description: description,
+      createAt: new Date().getTime(),
+    };
+
+    data.unshift(obj);
+
+    localStorage.setItem("items", JSON.stringify(data));
+    document.getElementById("title").value = "";
+    document.getElementById("description").value = "";
+
+    getData();
+  }
+}
+
+console.log(data);
