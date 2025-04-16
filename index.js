@@ -1757,3 +1757,53 @@ const searchData = () => {
     getData();
   }
 };
+
+// LOCAL STORAGE
+// 1. setItem("name","developer")
+// 2. getItem()
+// 3. clear()
+
+var names = [{name:"developer"}, {name:"test"}, {name:"developer2"}];
+
+localStorage.setItem("names", JSON.stringify(names));
+var name = localStorage.getItem("name");
+name = "test";
+localStorage.setItem("name", name);
+console.log(name);
+
+var names = localStorage.getItem("names");
+if (names) {
+  names = JSON.parse(names);
+}
+console.log(names[0]);
+
+const additem = () => {
+  names.push("developer3");
+  console.log(names);
+  localStorage.setItem("names", JSON.stringify(names));
+};
+
+// additem();
+
+
+
+
+// const removeitem = () => {
+
+//   names.pop()
+//   localStorage.setItem("names",JSON.stringify(names))
+//   console.log(names)
+  
+// }
+
+
+
+// removeitem()
+
+// const updateItem =()=>{
+//   names[0].name = "Dev"
+//   console.log(names)
+// localStorage.setItem("names",JSON.stringify(names))
+// }
+
+// updateItem()
