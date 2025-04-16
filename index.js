@@ -1455,7 +1455,7 @@ if (data1 !== null) {
   data1 = [];
 }
 function getData() {
-  container
+  container.innerHTML = "";
   // <li class="list-group-item">An item</li>
   for (var i = 0; i < data1.length; i++) {
     var listitem = document.createElement("li");
@@ -1504,7 +1504,6 @@ getData();
 var data = data1;
 
 function saveList() {
-
   var title = document.getElementById("title").value;
   var description = document.getElementById("description").value;
   var err = document.getElementById("err");
@@ -1529,4 +1528,232 @@ function saveList() {
   }
 }
 
-console.log(data);
+const clearSearch = () => {
+  document.getElementById("search").value = "";
+  data1 = data;
+  getData();
+};
+
+// console.log(data);
+
+// var data = []
+// var data =[]
+// data = []
+
+// let num = 10;
+// num = 20
+
+// const data3 = []
+// data3.push(10)
+// console.log(data3)
+
+// function test(){
+//   let num = 20
+// }
+
+// const a = 10
+
+// function test (){
+//   const a =10
+
+// }
+
+// function test(){
+//   const a = 10
+//   return a
+// }
+
+// const test = () => {
+//   // let num = 100;
+//   // if (num > 10) {
+//   //   return "greater";
+//   // } else {
+//   //   return "smaller";
+//   // }
+
+//   return num > 10 ? "greater" : "smaller";
+// };
+
+// console.log(test());
+
+// var name = "test";
+
+// name === "test" ? console.log("name is test") : console.log("name is not test");
+
+// var input = document.getElementById("title");
+// input.value = "23434234"
+
+// input.value.length > 5
+//   ? (input.style.backgroundColor = "green")
+//   : (input.style.backgroundColor = "red");
+
+//   if(input.value.length > 5){
+//     input.style.backgroundColor="green"
+//   }
+//   else{
+//     input.style.backgroundColor = "red"
+//   }
+
+// var obj = {
+//   name: "test",
+//   age: 20,
+//   rollNumber: 123,
+//   course: "Btech",
+// };
+
+// const { name, age, rollNumber, course } = obj;
+
+// console.log(name);
+// console.log(age);
+// console.log(rollNumber);
+// console.log(course);
+
+// obj.name
+// obj.age
+// obj.rollNumber
+// obj.course
+
+// var arr1 = [1,2,3,4]
+// var arr2 = [5,6,7,8]
+// var arr3 = [9,10,11,12]
+
+// var finalArr = [...arr1,...arr2,...arr3]
+// console.log(finalArr)
+
+// var arr = ["one", "two", "three", "four"];
+// const [item1, item2, item3, item4] = arr;
+// console.log(item1);
+// console.log(item2);
+// console.log(item3);
+// console.log(item4);
+
+// LET,
+// CONST,
+// ARROW FUNCTION,
+// SPREAD OPERATER,
+// DESTRUCTURING OF ARRAYS AND OBJECTS,
+// TERNIARY OPERATOR
+
+// var arr = new Set();
+// arr.add(1);
+// arr.add(2);
+// arr.add(2);
+
+// console.log(arr);
+
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((response) => response.json())
+//   .then((res) => {
+//     console.log(res);
+
+//   })
+//   .catch((err) => {
+//     console.log("error========>", err);
+//   });
+
+// function login() {
+// try {
+//   var username = document.getElementById("title").value;
+//   if (username) {
+//     console.log("username is available");
+//   } else {
+//     throw "username is required";
+//   }
+// } catch (err) {
+//   console.log(err);
+// }
+
+//   try {
+//     var username = document.getElementById("title").value;
+//     var description = document.getElementById("description").value;
+
+//     if (!username) {
+//       throw "username is required";
+//     } else if (!description) {
+//       throw "description is required";
+//     } else {
+//       console.log(username);
+//       console.log(description);
+//     }
+//   } catch (err) {
+//     document.getElementById("err").innerText = r;
+//     console.log("====err====+>", r);
+//   }
+// }
+
+// login();
+
+// let text = "Hello world, welcome to the universe.";
+// var isExist = text.includes("welcome");
+// console.log(isExist);
+
+// let text = "Hello world, welcome to the universe.";
+
+// var isStartsWith = text.startsWith("Hello"); // Returns true
+
+// console.log(isStartsWith);
+
+// if (true) {
+//   let a = function () {
+//     console.log("a2");
+//   };
+//   console.log(a());
+// }
+
+//how to write functions in different ways
+
+// function a() {
+//   console.log("a");
+// }
+// a();
+
+// var b = function () {
+//   console.log("b");
+// };
+// b();
+
+// var c = () => {
+//   console.log("c");
+// };
+
+// c();
+
+// var d = () => console.log("d");
+// d();
+
+// var data = [{ name: "Aser 1" }, { name: "user 2" }, { name: "user 3" }];
+
+// var filteredData = data.filter((item) => item.name.charAt(0) === "A");
+
+// console.log(filteredData);
+
+// var sortedData = data.sort((a, b) => a - b);
+// console.log(sortedData);
+
+// var data = localStorage.getItem("items");
+// if (data) {
+//   data = JSON.parse(data);
+// } else {
+//   data = [];
+// }
+// console.log(data);
+
+const searchData = () => {
+  var localData = localStorage.getItem("items");
+  if (localData) {
+    localData = JSON.parse(localData);
+  } else {
+    localData = [];
+  }
+  var searchText = document.getElementById("search").value;
+  if (searchText !== "") {
+    const filteredDAta = localData.filter((item) =>
+      item.title.includes(searchText)
+    );
+    data1 = filteredDAta;
+    getData();
+  } else {
+    data1 = localData;
+    getData();
+  }
+};
