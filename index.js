@@ -1763,7 +1763,7 @@ const searchData = () => {
 // 2. getItem()
 // 3. clear()
 
-var names = [{name:"developer"}, {name:"test"}, {name:"developer2"}];
+var names = [{ name: "developer" }, { name: "test" }, { name: "developer2" }];
 
 localStorage.setItem("names", JSON.stringify(names));
 var name = localStorage.getItem("name");
@@ -1785,25 +1785,30 @@ const additem = () => {
 
 // additem();
 
-
-
-
 // const removeitem = () => {
-
 //   names.pop()
 //   localStorage.setItem("names",JSON.stringify(names))
 //   console.log(names)
-  
 // }
-
-
-
 // removeitem()
-
 // const updateItem =()=>{
 //   names[0].name = "Dev"
 //   console.log(names)
 // localStorage.setItem("names",JSON.stringify(names))
 // }
-
 // updateItem()
+
+const previewImage = (event) => {
+  const file = event.target.files[0]
+  console.log(file);
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = (e) => {
+    const imagePreview = document.getElementById("imagePreview");
+    var image = document.createElement("img");
+    image.src = e.target.result;
+    image.style.width = "100px";
+    image.style.height = "100px";
+    imagePreview.appendChild(image);
+  };
+};
